@@ -1,4 +1,4 @@
-<?php define("APP_NAME", "sandbox"); ?>
+<?php include 'config.php';?>
 <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0">Cover</h3>
