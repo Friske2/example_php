@@ -1,0 +1,29 @@
+
+<header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Cover</h3>
+      <nav id="app-navbar" class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link" id="index" aria-current="page" href="/sandbox">Home</a>
+        <a class="nav-link" id="features" href="/sandbox/Features.php">Features</a>
+        <a class="nav-link" id="contact" href="/sandbox/Contact.php">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+<script>
+  const APP_NAME = 'sandbox'
+  const pathName = function() {
+    const { pathname } = new URL(location.href)
+    let path = pathname.replace('/'+APP_NAME,'').replace('.php','').replace('/','')
+    if(path === '') path = 'index'
+    return path.toLowerCase()
+  }
+  const path = pathName()
+  const el = document.getElementById('app-navbar').children
+  for (let i = 0; i < el.length; i++) {
+    const item = el[i]
+    if (item.id === path) {
+      item.classList.add('active')
+    }
+  } 
+</script>
